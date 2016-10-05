@@ -6,20 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class ExchangesRate extends Model
 {
-  /*
-    Define Scopes
-  */
-  public function scopeGetByCurrency($query, $currency_id) 
-  {
-    return $query->where("currency_id", "=", $currency_id)
-                 ->where("number_modifying", "=", $query->GetLastModify($currency_id));
-  }
-
-  public function scopeGetLastModify($query, $currency_id) 
-  {
-    return $query->where("currency_id", "=", $currency_id)->max("number_modifying");
-  }
-  // End Scopes
 
   public function currency()
   {

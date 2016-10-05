@@ -80,6 +80,7 @@
  * es:
 
  * fa:
+    * validation : uploaded
 
  * fi:
     * auth : failed
@@ -162,6 +163,8 @@
     * validation : uploaded
 
  * ka:
+    * validation : file
+    * validation : uploaded
 
  * km:
     * auth : failed

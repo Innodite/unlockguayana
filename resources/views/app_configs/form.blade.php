@@ -17,11 +17,6 @@
                        Config::get('languages'), 
                        isset($app_config) ? $app_config->meta_value : 'es', 
                        ['class'=>'form-control']) !!}
-    @elseif ($app_config->meta_name == "default_currency")
-      {!! Form::select('meta_value', 
-                       \App\Libs\Utils::publicComboBoxCurrencies(), 
-                       isset($app_config) ? $app_config->meta_value : '255', 
-                       ['class'=>'form-control']) !!}
     @else
       {!! Form::text('meta_value',
                    isset($app_config) ? $app_config->meta_value : old("meta_value"),

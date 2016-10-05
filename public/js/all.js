@@ -11,14 +11,6 @@ $(document).ready(function() {
 
   });
 
-  $(".currency_changed").change(function() {
-    window.location.replace(
-      window.location.origin + 
-      "/currency/"           + 
-      $(this).val()
-    );
-  });
-
 });
 /*!
  * fancyBox - jQuery Plugin
