@@ -80,7 +80,6 @@
  * es:
 
  * fa:
-    * validation : uploaded
 
  * fi:
     * auth : failed
@@ -105,7 +104,6 @@
     * validation : uploaded
 
  * fr:
-    * validation : uploaded
 
  * gl:
     * validation : dimensions
@@ -154,8 +152,6 @@
     * validation : uploaded
 
  * it:
-    * validation : file
-    * validation : uploaded
 
  * ja:
     * validation : dimensions
@@ -166,8 +162,6 @@
     * validation : uploaded
 
  * ka:
-    * validation : file
-    * validation : uploaded
 
  * km:
     * auth : failed
