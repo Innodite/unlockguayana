@@ -28,21 +28,24 @@
       margin-right: 6px;
     }
   </style>
+  @yield('css')
 </head>
 <body id="app-layout">
   <div class="header_top">
     <div class="col-sm-6 header-top-left">
       <div class="box">
-        <select tabindex="4" class="dropdown drop">
-          <option value="" class="label" value="">Dollar</option>
-          <option value="1">Dollar</option>
-          <option value="2">Euro</option>
-          <option value="3">Bolívar</option>
+        <select tabindex="4" class="dropdown drop currency_changed">  
+          <option value="{{ key(\App\Libs\Utils::current_currency()) }}" class="label">{{ current(\App\Libs\Utils::current_currency()) }}</option>
+          @foreach (\App\Libs\Utils::publicComboBoxCurrencies() as $key => $currency)
+            @if ($key != key(\App\Libs\Utils::current_currency()))
+              <option value="{{$key}}">{{$currency}}</option>
+            @endif
+          @endforeach
         </select>
       </div>
       <div class="box1">
         <select tabindex="4" class="dropdown lang_changed">
-          <option value="{{ App::getLocale() }}" class="label" value="">{{ Config::get('languages')[App::getLocale()] }}</option>
+          <option value="{{ App::getLocale() }}" class="label">{{ Config::get('languages')[App::getLocale()] }}</option>
           @foreach (Config::get('languages') as $lang => $language)
             @if ($lang != App::getLocale())
               <option value="{{ $lang }}">{{$language}}</option>
@@ -224,6 +227,7 @@
     </div>
   @endif
 
+  @yield('header')
   @yield('content')
 
   @include('footer.footer')

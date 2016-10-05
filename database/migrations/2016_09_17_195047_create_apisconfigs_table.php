@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateApisConfigsTable extends Migration {
+class CreateApisconfigsTable extends Migration {
 
 	/**
 	 * Run the migrations.

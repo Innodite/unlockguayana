@@ -29,7 +29,10 @@ Route::group(['middleware' => ['web']], function () {
 //    return redirect()->to('/');
 //  });
 
-  Route::get('lang/{lang}', ['as'=>'lang.switch', 'uses'=>'LanguageController@switchLang']);
+  Route::get('lang/{lang}',            ['as'=>'lang.switch',     'uses'=>'SwitchController@switchLang']);
+  Route::get('currency/{currency_id}', ['as'=>'currency.switch', 'uses'=>'SwitchController@switchCurrency']);
+
+
 
   // Services
   Route::get('services/unlock_hash', [
@@ -65,6 +68,7 @@ Route::group(['middleware' => ['web']], function () {
   Route::get('/permisos/asignar','PermissionController@assign');
   Route::get('/permisos/desasignar','PermissionController@unassign');
   Route::get('/mp_credit_check','SimpleBalanceController@mp_credits_check');
+  Route::get('/mp_capture','SimpleBalanceController@mp_capture');
   // Config
   Route::resource("app_configs","AppConfigController");
   Route::resource("apis_configs","ApisConfigController");
